@@ -290,8 +290,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sqlite3 (1.7.3-x64-mingw-ucrt)
-    sqlite3 (1.7.3-x86_64-linux)
     sshkit (1.23.2)
       base64
       net-scp (>= 1.1.2)
@@ -351,7 +349,6 @@ DEPENDENCIES
   rails (~> 7.1)
   rubocop-rails-omakase
   selenium-webdriver
-  sqlite3 (~> 1.4)
   stimulus-rails
   thruster
   turbo-rails
