@@ -1,0 +1,13 @@
+<% content_for :title, "Editing friend" %>
+
+<h1>Editing friend</h1>
+<br/>
+
+<%= render "form", friend: @friend %>
+
+<br/>
+
+
+  <%= link_to "Show thisfriend", @friend , class:"btn btn-outline-warning btn-sm m-1"  %>
+  <%= button_to "Destroy friend", @friend, method: :delete, class: "btn btn-outline-danger btn-sm m-1" %>
+  <%= link_to "Back to friends", friends_path, class:"btn btn-outline-dark btn-sm m-1" %>

@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <div class="jumbotron text-center bg-primary text-white">
+    <h1 class="display-4">Welcome to Friend App!</h1>
+    <p class="lead">A simple way to keep track of your friends contact information.</p>
+    <hr class="my-4 bg-light">
+    <p>Start adding your friends and manage their details easily!</p>
+    <% if user_signed_in? %>
+      <%= link_to 'View Your Friends', friends_path, class: "btn btn-success btn-lg" %>
+    <% else %>
+      <%= link_to 'Sign Up Now', new_user_registration_path, class: "btn btn-warning btn-lg" %>
+    <% end %>
+  </div>
+</div>

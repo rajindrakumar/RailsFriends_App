@@ -1,0 +1,62 @@
+
+<% if user_signed_in? %>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead style="background-color: #007bff; color: white;">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Distroy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+      <tr>
+        <td>
+          <%= link_to friend.first_name + ' ' + friend.last_name, friend %>
+        </td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.twitter %></td>
+        <td>
+        <%= link_to 'Show', friend, class: "btn btn-outline-success btn-sm" %>
+        </td>
+        <td>
+        <%= link_to 'Edit', edit_friend_path(friend), class: "btn btn-outline-primary btn-sm" %>
+        </td>
+
+         <td>
+          <%= button_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %>
+          </td>
+      </tr>
+      <% end %>
+    <% end %> 
+  </tbody>
+</table>
+<br>
+
+  <%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary" %>
+<br/>
+
+<% else %>
+
+<div class="container mt-5">
+  <div class="jumbotron text-center bg-primary text-white">
+    <h1 class="display-4">Welcome to Friend App!</h1>
+    <p class="lead">A simple way to keep track of your friends contact information.</p>
+    <hr class="my-4 bg-light">
+    <p>Start adding your friends and manage their details easily!</p>
+    <% if user_signed_in? %>
+      <%= link_to 'View Your Friends', friends_path, class: "btn btn-success btn-lg" %>
+    <% else %>
+      <%= link_to 'Sign Up Now', new_user_registration_path, class: "btn btn-warning btn-lg" %>
+    <% end %>
+  </div>
+</div>
+
+<% end %>
