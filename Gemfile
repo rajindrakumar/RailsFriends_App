@@ -8,7 +8,6 @@ gem "propshaft"
 
 # Use sqlite3 as the database for Active Record
 # before development
-# gem "sqlite3", ">= 2.1"
 # if i want to deploy
 gem 'pg'
 
