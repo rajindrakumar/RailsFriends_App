@@ -46,5 +46,7 @@ test:
 
 # when i want to deploy then
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   url: <%= ENV['DATABASE_URL'] %>
