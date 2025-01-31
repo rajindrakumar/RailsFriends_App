@@ -6,10 +6,10 @@ gem "rails", "~> 8.0.1"
 gem "propshaft"
 
 
-# Use sqlite3 as the database for Active Record
+#Use sqlite3 as the database for Active Record
+gem 'pg'
 # before development
 # if i want to deploy
-gem 'pg'
 
 
 # Use the Puma web server [https://github.com/puma/puma]
